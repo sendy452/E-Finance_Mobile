@@ -22,4 +22,16 @@
         android:name="com.google.e_finance.ui.pengeluaran.PengeluaranFragment"
         android:label="Pengeluaran"
         tools:layout="@layout/fragment_pengeluaran" />
+
+    <fragment
+        android:id="@+id/nav_laporan"
+        android:name="com.google.e_finance.ui.pengeluaran.PengeluaranFragment"
+        android:label="Pengeluaran"
+        tools:layout="@layout/fragment_laporan" />
+
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.google.e_finance.ui.pengeluaran.PengeluaranFragment"
+        android:label="Pengeluaran"
+        tools:layout="@layout/fragment_setting" />
 </navigation>
