@@ -1,4 +1,4 @@
-package com.google.e_finance.ui.gallery;
+package com.google.e_finance.ui.pendapatan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.e_finance.R;
 
-public class GalleryFragment extends Fragment {
+public class PendapatanFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private PendapatanViewModel pendapatanViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
+        pendapatanViewModel =
+                new ViewModelProvider(this).get(PendapatanViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_pendapatan, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        pendapatanViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

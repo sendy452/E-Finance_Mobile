@@ -1,4 +1,4 @@
-package com.google.e_finance.ui.slideshow;
+package com.google.e_finance.ui.pengeluaran;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.google.e_finance.R;
 
-public class SlideshowFragment extends Fragment {
+public class PengeluaranFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private PengeluaranViewModel pengeluaranViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+        pengeluaranViewModel =
+                new ViewModelProvider(this).get(PengeluaranViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_pengeluaran, container, false);
         final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        pengeluaranViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
