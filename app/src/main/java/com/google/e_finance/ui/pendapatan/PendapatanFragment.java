@@ -16,20 +16,11 @@ import com.google.e_finance.R;
 
 public class PendapatanFragment extends Fragment {
 
-    private PendapatanViewModel pendapatanViewModel;
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        pendapatanViewModel =
-                new ViewModelProvider(this).get(PendapatanViewModel.class);
         View root = inflater.inflate(R.layout.fragment_pendapatan, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
-        pendapatanViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

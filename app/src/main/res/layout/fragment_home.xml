@@ -1,22 +1,313 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
-
-    <TextView
-        android:id="@+id/text_home"
+    tools:context=".ui.home.HomeFragment" >
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pendapatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_margin="10dp" >
+            <FrameLayout
+                android:background="#1cc88a"
+                android:layout_width="8dp"
+                android:layout_height="110dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/money"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginRight="20dp"
+                app:tint="#858796"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="40dp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="PENDAPATAN TERAKHIR"
+                android:textColor="#1cc88a"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Rp."
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:id="@+id/txt_pendapatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200000"
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="40dp"
+
+                android:text="Total Pendapatan:  Rp."
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/total_pendapatan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="180dp"
+                android:text="100000"
+                android:layout_marginBottom="10dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_pengeluaran"
+            android:layout_below="@id/card_pendapatan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_margin="10dp" >
+            <FrameLayout
+                android:background="#e74a3b"
+                android:layout_width="8dp"
+                android:layout_height="110dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/money"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginRight="20dp"
+                app:tint="#858796"
+                android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="PENGELUARAN TERAKHIR"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="12sp"
+                android:textColor="#e74a3b" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp."
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:id="@+id/txt_pengeluaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200000"
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="40dp"
+                android:text="Total Pengeluaran:  Rp."
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/total_pengeluaran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="185dp"
+                android:text="300000"
+                android:layout_marginBottom="10dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_sisa"
+            android:layout_below="@id/card_pengeluaran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_margin="10dp" >
+            <FrameLayout
+                android:background="#36b9cc"
+                android:layout_width="8dp"
+                android:layout_height="110dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/money"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginRight="20dp"
+                app:tint="#858796"
+                android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="SISA UANG"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="12sp"
+                android:textColor="#36b9cc" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rp."
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:id="@+id/txt_sisa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200000"
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_aktivitas"
+            android:layout_below="@id/card_sisa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_margin="10dp" >
+            <FrameLayout
+                android:background="#4e73df"
+                android:layout_width="8dp"
+                android:layout_height="110dp"/>
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/activity"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginRight="20dp"
+                app:tint="#858796"
+                android:layout_marginBottom="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/nunito_bold"
+                android:text="AKTIVITAS TERAKHIR"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="30dp"
+                android:textSize="12sp"
+                android:textColor="#4e73df" />
+            <TextView
+                android:id="@+id/txt_aktivitas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gajian"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="5dp"
+                android:layout_gravity="start|center_vertical"
+                android:textColor="#5a5c69"
+                android:textStyle="bold"
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="40dp"
+                android:text="Keterangan: "
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/txt_keterangan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="120dp"
+                android:text="Pendapatan"
+                android:layout_marginBottom="10dp" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_chart"
+            android:layout_below="@id/card_aktivitas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardMaxElevation="12dp"
+            app:cardPreventCornerOverlap="true"
+            android:layout_margin="10dp" >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ecf0f1"
+                android:textColor="#4e73df"
+                android:text="Perbandingan"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="18sp"
+                android:padding="10dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="45dp"
+                android:background="#e3e6f0" />
+
+            <lecho.lib.hellocharts.view.PieChartView
+                android:id="@+id/chart"
+                android:layout_marginTop="60dp"
+                android:layout_marginBottom="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</ScrollView>
