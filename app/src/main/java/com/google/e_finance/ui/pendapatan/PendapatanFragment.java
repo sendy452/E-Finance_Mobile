@@ -2,6 +2,8 @@ package com.google.e_finance.ui.pendapatan;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -20,7 +22,13 @@ public class PendapatanFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_pendapatan, container, false);
         final TextView textView = root.findViewById(R.id.text_gallery);
-
+        setHasOptionsMenu(true);
         return root;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        inflater.inflate(R.menu.add_button, menu);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 }
