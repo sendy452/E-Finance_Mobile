@@ -1,6 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_laporan_pendapatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="10dp" >
+        <FrameLayout
+            android:background="#1cc88a"
+            android:layout_width="8dp"
+            android:layout_height="110dp"/>
+        <Button
+            android:id="@+id/export_pendapatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="20dp"
+            android:onClick="exportPendapatan"
+            android:text="Export"
+            android:backgroundTint="#1cc88a" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="LAPORAN PENDAPATAN"
+            android:textColor="#1cc88a"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CETAK"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textSize="25sp"
+            android:fontFamily="@font/nunito_bold"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_laporan_pengeluaran"
+        android:layout_below="@id/card_laporan_pendapatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="10dp" >
+        <FrameLayout
+            android:background="#e74a3b"
+            android:layout_width="8dp"
+            android:layout_height="110dp"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="20dp"
+            android:onClick="exportPengeluaran"
+            android:text="Export"
+            android:backgroundTint="#e74a3b" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="LAPORAN PENGELUARAN"
+            android:textColor="#e74a3b"
+            android:layout_marginTop="10dp"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CETAK"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textSize="25sp"
+            android:fontFamily="@font/nunito_bold"/>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

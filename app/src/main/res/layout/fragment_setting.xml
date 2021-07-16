@@ -1,6 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="3dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PROFIL"
+                android:textAlignment="center"
+                android:fontFamily="@font/nunito_bold"
+                android:textSize="25sp"/>
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@mipmap/user_round"
+                android:layout_gravity="center"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <EditText
+                android:id="@+id/txtNama"
+                android:paddingLeft="20dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/fullname"
+                android:drawablePadding="20dp"
+                android:hint="Nama"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"></RelativeLayout>
+            <EditText
+                android:id="@+id/txtHp"
+                android:paddingLeft="20dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/smartphone"
+                android:drawablePadding="20dp"
+                android:hint="No. HP"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="16sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"></RelativeLayout>
+            <EditText
+                android:id="@+id/txtEmail"
+                android:paddingLeft="20dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="20dp"
+                android:hint="E-Mail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="16sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"></RelativeLayout>
+            <EditText
+                android:id="@+id/txtUsername"
+                android:paddingLeft="20dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/user"
+                android:drawablePadding="20dp"
+                android:hint="Username"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="16sp"
+                android:inputType="none"
+                android:enabled="false" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"></RelativeLayout>
+            <EditText
+                android:id="@+id/txtPassword"
+                android:paddingLeft="20dp"
+                android:background="@drawable/form"
+                android:drawableStart="@drawable/key"
+                android:drawablePadding="20dp"
+                android:hint="Password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="16sp" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="15dp"/>
+            <Button
+                android:id="@+id/btnRegis"
+                android:fontFamily="@font/nunito_bold"
+                android:backgroundTint="#3498db"
+                android:layout_gravity="center"
+                android:textAllCaps="false"
+                android:text="Update"
+                android:layout_width="150dp"
+                android:padding="10dp"
+                android:layout_height="wrap_content" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+    <Button
+        android:id="@+id/btnLapor"
+        android:fontFamily="@font/nunito_bold"
+        android:backgroundTint="#f1c40f"
+        android:layout_gravity="center"
+        android:textAllCaps="false"
+        android:text="Laporkan!"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btnLogout"
+        android:fontFamily="@font/nunito_bold"
+        android:backgroundTint="#e74c3c"
+        android:layout_gravity="center|bottom"
+        android:textAllCaps="false"
+        android:text="Logout"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>

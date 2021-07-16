@@ -9,26 +9,34 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import com.google.e_finance.R;
 
 public class PendapatanFragment extends Fragment {
 
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    View view;
 
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         View root = inflater.inflate(R.layout.fragment_pendapatan, container, false);
         final TextView textView = root.findViewById(R.id.jumlah);
         setHasOptionsMenu(true);
+
         return root;
     }
 
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.add_button, menu);
+        inflater.inflate(R.menu.main, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -45,5 +53,30 @@ public class PendapatanFragment extends Fragment {
 
         item.setIcon(icon);
         item2.setIcon(icon2);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.btn_refresh:
+                PendapatanFragment fragment = (PendapatanFragment) getFragmentManager()
+                        .findFragmentById(R.id.nav_pendapatan);
+                if (fragment != null) {
+                    fragment.getViewLifecycleOwnerLiveData();
+                }
+                return true;
+
+            case R.id.btn_add:
+                Fragment newFragment = new InsertData();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, newFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

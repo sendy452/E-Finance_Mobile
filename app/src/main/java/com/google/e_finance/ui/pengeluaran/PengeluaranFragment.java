@@ -12,10 +12,9 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.e_finance.R;
 
@@ -31,7 +30,7 @@ public class PengeluaranFragment extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
-        inflater.inflate(R.menu.add_button, menu);
+        inflater.inflate(R.menu.main, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
 
@@ -48,5 +47,30 @@ public class PengeluaranFragment extends Fragment {
 
         item.setIcon(icon);
         item2.setIcon(icon2);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+
+            case R.id.btn_refresh:
+                PengeluaranFragment fragment = (PengeluaranFragment) getFragmentManager()
+                        .findFragmentById(R.id.nav_pengeluaran);
+                if (fragment != null) {
+                    fragment.getViewLifecycleOwnerLiveData();
+                }
+                return true;
+
+            case R.id.btn_add:
+                Fragment newFragment = new InsertData();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.nav_host_fragment, newFragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
