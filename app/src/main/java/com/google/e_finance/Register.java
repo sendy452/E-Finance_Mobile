@@ -25,8 +25,6 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -41,7 +39,7 @@ public class Register extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = "http://192.168.100.9:81/CI_E-Finance/Api/register/";
+    private String url = "https://e-finance7.000webhostapp.com/Api/register/";
 
     private static final String TAG = Register.class.getSimpleName();
 

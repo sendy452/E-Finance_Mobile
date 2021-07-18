@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
+
 import java.io.File;
 import java.io.FileOutputStream;
 
@@ -24,13 +25,15 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    TextView txt_id, txt_username;
+    TextView txt_email, txt_nama;
     String email, nama, id_user;
     SharedPreferences sharedpreferences;
 
     public static final String TAG_NAMA = "nama";
     public static final String TAG_EMAIL = "email";
     public static final String TAG_ID = "id_user";
+
+    private String url2 = "https://e-finance7.000webhostapp.com/Api/pengeluaran/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,16 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View header = navigationView.getHeaderView(0);
-        txt_id = (TextView) header.findViewById(R.id.v_txtemail);
-        txt_username = (TextView) header.findViewById(R.id.v_txtnama);
+        txt_email = (TextView) header.findViewById(R.id.v_txtemail);
+        txt_nama = (TextView) header.findViewById(R.id.v_txtnama);
         sharedpreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
 
         email = getIntent().getStringExtra(TAG_EMAIL);
         nama = getIntent().getStringExtra(TAG_NAMA);
         id_user = getIntent().getStringExtra(TAG_ID);
 
-        txt_id.setText(email);
-        txt_username.setText(nama);
+        txt_email.setText(email);
+        txt_nama.setText(nama);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -74,37 +77,6 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
-    }
-
-    public void exportPendapatan(View view){
-        //generate data
-        StringBuilder data = new StringBuilder();
-        data.append("NO,TANGGAL PENDAPATAN,JUMLAH,KETERANGAN");
-        for(int i = 0; i<5; i++){
-            data.append("\n"+String.valueOf(i+1)+","+String.valueOf(i*i)+","+String.valueOf("Rp." + "10000")+","+ String.valueOf("Blalabla"));
-        }
-
-        try{
-            //saving the file into device
-            FileOutputStream out = openFileOutput("Laporan Pendapatan.csv", Context.MODE_PRIVATE);
-            out.write((data.toString()).getBytes());
-            out.close();
-
-            //exporting
-
-            Context context = getApplicationContext();
-            File filelocation = new File(getFilesDir(), "Laporan Pendapatan.csv");
-            Uri path = FileProvider.getUriForFile(context, "com.example.exportcsv.fileprovider", filelocation);
-            Intent fileIntent = new Intent(Intent.ACTION_SEND);
-            fileIntent.setType("text/csv");
-            fileIntent.putExtra(Intent.EXTRA_SUBJECT, "Data");
-            fileIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-            fileIntent.putExtra(Intent.EXTRA_STREAM, path);
-            startActivity(Intent.createChooser(fileIntent, "EXCEL DATA"));
-        }
-        catch(Exception e){
-            e.printStackTrace();
-        }
     }
 
     public void exportPengeluaran(View view){

@@ -12,7 +12,6 @@
             <size android:height="20dp" />
             <solid android:color="#ecf0f1" />
             <corners android:radius="5dp" />
-
         </shape>
     </item>
 </layer-list>

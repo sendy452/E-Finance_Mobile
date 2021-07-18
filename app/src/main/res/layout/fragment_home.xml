@@ -56,7 +56,7 @@
                 android:id="@+id/txt_pendapatan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200000"
+                android:text="0"
                 android:layout_marginLeft="80dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="start|center_vertical"
@@ -76,8 +76,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:layout_marginLeft="180dp"
-                android:text="100000"
+                android:layout_marginLeft="182dp"
+                android:text="0"
                 android:layout_marginBottom="10dp" />
 
         </androidx.cardview.widget.CardView>
@@ -129,7 +129,7 @@
                 android:id="@+id/txt_pengeluaran"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200000"
+                android:text="0"
                 android:layout_marginLeft="80dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="start|center_vertical"
@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="185dp"
-                android:text="300000"
+                android:text="0"
                 android:layout_marginBottom="10dp" />
 
         </androidx.cardview.widget.CardView>
@@ -201,7 +201,7 @@
                 android:id="@+id/txt_sisa"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200000"
+                android:text="0"
                 android:layout_marginLeft="80dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="start|center_vertical"
@@ -248,7 +248,7 @@
                 android:id="@+id/txt_aktivitas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Gajian"
+                android:text="Belum Ada Aktivitas"
                 android:layout_marginLeft="40dp"
                 android:layout_marginBottom="5dp"
                 android:layout_gravity="start|center_vertical"
@@ -268,7 +268,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="120dp"
-                android:text="Pendapatan"
+                android:text="-"
                 android:layout_marginBottom="10dp" />
 
         </androidx.cardview.widget.CardView>
@@ -283,7 +283,7 @@
             app:cardBackgroundColor="@color/white"
             app:cardMaxElevation="12dp"
             app:cardPreventCornerOverlap="true"
-            android:layout_margin="10dp" >
+            android:layout_margin="10dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -302,10 +302,45 @@
             <lecho.lib.hellocharts.view.PieChartView
                 android:id="@+id/chart"
                 android:layout_marginTop="60dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="50dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp" />
-
+            <View
+                android:layout_gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="40dp"
+                android:background="#e3e6f0" />
+            <TextView
+                android:layout_gravity="bottom|start"
+                android:layout_marginLeft="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" PENDAPATAN"
+                android:textColor="#1cc88a"
+                android:drawableLeft="@drawable/shape"
+                android:drawableTint="#1cc88a"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_gravity="center_horizontal|bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:text=" PENGELUARAN"
+                android:textColor="#e74a3b"
+                android:drawableLeft="@drawable/shape"
+                android:drawableTint="#e74a3b"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_gravity="center_horizontal|bottom|end"
+                android:layout_marginRight="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" SISA"
+                android:textColor="#36b9cc"
+                android:drawableLeft="@drawable/shape"
+                android:drawableTint="#36b9cc"
+                android:layout_marginBottom="10dp"/>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
 

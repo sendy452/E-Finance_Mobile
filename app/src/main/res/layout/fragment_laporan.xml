@@ -5,7 +5,81 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_totalPendapatan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="10dp" >
+        <FrameLayout
+            android:background="#1cc88a"
+            android:layout_width="8dp"
+            android:layout_height="110dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/money"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="20dp"
+            app:tint="#858796"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="TOTAL PENDAPATAN"
+            android:textColor="#1cc88a"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Rp."
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:id="@+id/txt_totalPendapatan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="40dp"
+            android:text="Jumlah Transaksi:"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/total_transMasuk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="155dp"
+            android:text="-"
+            android:layout_marginBottom="15dp" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/card_laporan_pendapatan"
+        android:layout_below="@id/card_totalPendapatan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="2dp"
@@ -24,7 +98,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:layout_marginRight="20dp"
-            android:onClick="exportPendapatan"
             android:text="Export"
             android:backgroundTint="#1cc88a" />
 
@@ -49,8 +122,9 @@
             android:textSize="25sp"
             android:fontFamily="@font/nunito_bold"/>
     </androidx.cardview.widget.CardView>
+
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_laporan_pengeluaran"
+        android:id="@+id/card_totalPengeluaran"
         android:layout_below="@id/card_laporan_pendapatan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -64,12 +138,84 @@
             android:background="#e74a3b"
             android:layout_width="8dp"
             android:layout_height="110dp"/>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/money"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginRight="20dp"
+            app:tint="#858796"
+            android:layout_marginBottom="10dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="TOTAL PENDAPATAN"
+            android:textColor="#e74a3b"
+            android:textSize="12sp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Rp."
+            android:layout_marginLeft="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:id="@+id/txt_totalPengeluaran"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_marginLeft="80dp"
+            android:layout_marginBottom="5dp"
+            android:layout_gravity="start|center_vertical"
+            android:textColor="#5a5c69"
+            android:textStyle="bold"
+            android:textSize="25sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="40dp"
+            android:text="Jumlah Transaksi:"
+            android:layout_marginBottom="15dp"/>
+        <TextView
+            android:id="@+id/total_transKeluar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="155dp"
+            android:text="-"
+            android:layout_marginBottom="15dp" />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_laporan_pengeluaran"
+        android:layout_below="@id/card_totalPengeluaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        android:layout_margin="10dp" >
+        <FrameLayout
+            android:background="#e74a3b"
+            android:layout_width="8dp"
+            android:layout_height="110dp"/>
         <Button
+            android:id="@+id/export_pengeluaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|center_vertical"
             android:layout_marginRight="20dp"
-            android:onClick="exportPengeluaran"
             android:text="Export"
             android:backgroundTint="#e74a3b" />
 

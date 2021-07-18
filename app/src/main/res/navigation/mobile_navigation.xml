@@ -19,9 +19,9 @@
 
     <fragment
         android:id="@+id/nav_insert_pendapatan"
-        android:name="com.google.e_finance.ui.pendapatan.InsertData"
+        android:name="com.google.e_finance.ui.pendapatan.UpdateData"
         android:label="Pendapatan"
-        tools:layout="@layout/activity_insert_pendapatan" />
+        tools:layout="@layout/activity_insert" />
 
     <fragment
         android:id="@+id/nav_pengeluaran"

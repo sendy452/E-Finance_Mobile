@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -18,8 +17,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.e_finance.app.AppController;
+import com.google.e_finance.ui.pendapatan.UpdateData;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.HashMap;
@@ -35,7 +34,7 @@ public class Login extends AppCompatActivity {
     int success;
     ConnectivityManager conMgr;
 
-    private String url = "http://192.168.100.9:81/CI_E-Finance/Api/login/";
+    private String url = "https://e-finance7.000webhostapp.com/Api/login/";
 
     private static final String TAG = Login.class.getSimpleName();
 
@@ -45,12 +44,13 @@ public class Login extends AppCompatActivity {
     public final static String TAG_NAMA = "nama";
     public final static String TAG_EMAIL = "email";
     public final static String TAG_ID = "id_user";
+    public final static String TAG_USERNAME = "username";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String email, nama, id_user;
+    String email, nama, id_user, username;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
@@ -80,12 +80,14 @@ public class Login extends AppCompatActivity {
         email = sharedpreferences.getString(TAG_EMAIL, null);
         nama = sharedpreferences.getString(TAG_NAMA, null);
         id_user = sharedpreferences.getString(TAG_ID, null);
+        username = sharedpreferences.getString(TAG_USERNAME, null);
 
         if (session) {
             Intent intent = new Intent(Login.this, MainActivity.class);
             intent.putExtra(TAG_EMAIL, email);
             intent.putExtra(TAG_NAMA, nama);
             intent.putExtra(TAG_ID, id_user);
+            intent.putExtra(TAG_USERNAME, username);
             finish();
             startActivity(intent);
         }
@@ -144,6 +146,7 @@ public class Login extends AppCompatActivity {
                         String nama = jObj.getString(TAG_NAMA);
                         String email = jObj.getString(TAG_EMAIL);
                         String id_user = jObj.getString(TAG_ID);
+                        String username = jObj.getString(TAG_USERNAME);
 
                         Log.e("Successfully Login!", jObj.toString());
 
@@ -155,6 +158,7 @@ public class Login extends AppCompatActivity {
                         editor.putString(TAG_EMAIL, email);
                         editor.putString(TAG_NAMA, nama);
                         editor.putString(TAG_ID, id_user);
+                        editor.putString(TAG_USERNAME, username);
                         editor.commit();
 
                         // Memanggil main activity
@@ -162,6 +166,7 @@ public class Login extends AppCompatActivity {
                         intent.putExtra(TAG_EMAIL, email);
                         intent.putExtra(TAG_NAMA, nama);
                         intent.putExtra(TAG_ID, id_user);
+                        intent.putExtra(TAG_USERNAME, username);
                         finish();
                         startActivity(intent);
                     } else {

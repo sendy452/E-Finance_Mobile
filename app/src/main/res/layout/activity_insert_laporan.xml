@@ -5,12 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:padding="10dp"
     android:layout_marginTop="50dp"
-    tools:context=".ui.pendapatan.InsertData">
+    tools:context=".ui.pendapatan.UpdateData">
     <TextView
         android:id="@+id/judul"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TAMBAH PENDAPATAN"
+        android:text="LAPORKAN MASALAH"
         android:textFontWeight="900"
         android:textSize="25sp"
         android:gravity="center"
@@ -24,11 +24,12 @@
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/inp_tgl"
+            android:id="@+id/inp_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Tanggal Pendapatan"
-            android:background="@drawable/round_corner_toggle" />
+            android:hint="Email"
+            android:background="@drawable/round_corner_toggle"
+            android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -39,12 +40,11 @@
         android:layout_marginTop="10dp">
 
         <EditText
-            android:id="@+id/inp_jumlah"
+            android:id="@+id/inp_judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Jumlah Rp."
-            android:background="@drawable/round_corner_toggle"
-            android:inputType="number"/>
+            android:hint="Judul"
+            android:background="@drawable/round_corner_toggle" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -55,10 +55,10 @@
         android:layout_marginTop="10dp">
 
         <EditText
-            android:id="@+id/inp_keterangan"
+            android:id="@+id/inp_isi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Keterangan"
+            android:hint="Isi"
             android:background="@drawable/round_corner_toggle"/>
     </com.google.android.material.textfield.TextInputLayout>
     <LinearLayout
@@ -82,17 +82,20 @@
             android:id="@+id/btn_simpan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Simpan"
-            android:backgroundTint="#1cc88a" />
+            android:text="Laporkan"
+            android:backgroundTint="#e74a3b" />
     </LinearLayout>
-    <Button
-        android:id="@+id/btn_hapus"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hapus"
-        android:backgroundTint="#e74a3b"
-        android:paddingLeft="75dp"
-        android:paddingRight="75dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilid"
+        android:layout_below="@id/layout_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/inp_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Iusername"
+            android:background="@drawable/round_corner_toggle" />
+    </com.google.android.material.textfield.TextInputLayout>
 </RelativeLayout>
