@@ -12,14 +12,22 @@ android {
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    project.ext { appName = 'E-Finance' }
+                    outputFileName = "${appName}-${output.getFilter(com.android.build.OutputFile.ABI)}-${variant.name}-${variant.versionName}.apk"
+                }
+            }
         }
     }
     compileOptions {
@@ -41,5 +49,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
-    compile 'com.android.volley:volley:1.1.0'
+    implementation 'com.android.volley:volley:1.1.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }
