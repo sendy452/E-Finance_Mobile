@@ -114,9 +114,10 @@ public class UpdateData extends AppCompatActivity {
                         try {
                             JSONObject res = new JSONObject(response);
                             Log.e("Successfully Get Data!", res.toString());
-
+                            Toast.makeText(getApplicationContext() ,"Sukses Update, Harap Refresh...", Toast.LENGTH_LONG).show();
                             finish();
                         } catch (JSONException e) {
+                            Toast.makeText(getApplicationContext() , "Gagal Update", Toast.LENGTH_SHORT).show();
                             e.printStackTrace();
                         }
                     }
@@ -125,7 +126,7 @@ public class UpdateData extends AppCompatActivity {
                             /** Menjalankan function onErrorResponse apabila gagal atau error saat merubah data*/
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext() , "Gagal Update Data", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext() , "Gagal Update", Toast.LENGTH_SHORT).show();
                             }
                         }) {
                     /** Mengirim data sesuai dengan inputan */
@@ -154,12 +155,11 @@ public class UpdateData extends AppCompatActivity {
                     public void onResponse(String response) {
                         try {
                             JSONObject res = new JSONObject(response);
-                            Toast.makeText(getApplicationContext() , "Sukses Hapus Data", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext() , "Sukses Hapus, Harap Refresh...", Toast.LENGTH_SHORT).show();
                             finish();
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext() , "Sukses Hapus Data", Toast.LENGTH_SHORT).show();
-                            finish();
+                            Toast.makeText(getApplicationContext() , "Gagal Hapus", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
@@ -167,7 +167,7 @@ public class UpdateData extends AppCompatActivity {
                             /** Menjalankan function onErrorResponse apabila gagal atau error saat merubah data*/
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext() , "Gagal Hapus Data", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext() , "Gagal Hapus", Toast.LENGTH_SHORT).show();
                             }
                         });
                 AppController.getInstance().addToRequestQueue(updateReq);

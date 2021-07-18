@@ -98,7 +98,7 @@ public class InsertData extends Fragment {
                                 Log.e("Successfully Add!", jObj.toString());
 
                                 Toast.makeText(getActivity().getApplicationContext(),
-                                        "Sukses Tambah", Toast.LENGTH_LONG).show();
+                                        "Sukses Tambah Data", Toast.LENGTH_LONG).show();
                                 
                                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                                 transaction.replace(R.id.nav_host_fragment, new PengeluaranFragment());
